@@ -35,23 +35,23 @@ alter table purchase_contract comment '采购合同表';
 /*==============================================================*/
 /* Table: purchase_product                                      */
 /*==============================================================*/
-create table purchase_product
+CREATE TABLE purchase_product
 (
-   id                   int not null auto_increment comment '主键ID，自动生成',
-   contract_id          int not null comment '合同主键',
-   product_model        varchar(50) comment '型号',
-   product_name         varchar(100) comment '商品名称',
-   product_specifications varchar(50) comment '规格',
-   per_value            varchar(15) comment '1单位数量',
-   unit                 varchar(100) comment '单位',
-   num                  varchar(50) comment '数量',
-   price                varchar(15) comment '单价',
-   total_amount         datetime comment '总金额',
-   effective_time       datetime not null comment '创建时间',
-   update_time          datetime not null comment '更新时间',
-   del_flag             int not null comment '删除标识。0：非删除；1：删除',
-   remark               varchar(300) comment '备注',
-   primary key (id)
+   id                   INT NOT NULL AUTO_INCREMENT COMMENT '主键ID，自动生成',
+   contract_id          INT NOT NULL COMMENT '合同主键',
+   product_model        VARCHAR(50) COMMENT '型号',
+   product_name         VARCHAR(100) COMMENT '商品名称',
+   product_specifications VARCHAR(50) COMMENT '规格',
+   per_value            VARCHAR(15) COMMENT '1单位数量',
+   unit                 VARCHAR(100) COMMENT '单位',
+   num                  NUMERIC(50,0) COMMENT '数量',
+   price                NUMERIC(15,0) COMMENT '单价',
+   total_amount         NUMERIC(15,0) COMMENT '总金额',
+   create_time       DATETIME NOT NULL COMMENT '创建时间',
+   update_time          DATETIME NOT NULL COMMENT '更新时间',
+   del_flag             INT NOT NULL COMMENT '删除标识。0：非删除；1：删除',
+   remark               VARCHAR(300) COMMENT '备注',
+   PRIMARY KEY (id)
 );
 
 alter table purchase_product comment '采购产品表';
